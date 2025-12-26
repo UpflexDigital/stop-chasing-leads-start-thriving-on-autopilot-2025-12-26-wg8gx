@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UpFlex Digital - The all-in-one AI sales and marketing platform. Stop chasing leads and start thriving on autopilot.">
+    <title>UpFlex Digital | AI Sales & Marketing Automation</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Configuration for Design System -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF5A5F', // Coral Red
+                        secondary: '#1A1A1A', // Dark Gray
+                        accent: '#FFD166', // Warm Yellow
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom-xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                        'glow': '0 0 20px rgba(255, 90, 95, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #FF5A5F, #FFD166);
+        }
+        
+        .bg-gradient-custom {
+            background-image: linear-gradient(to right, #FF5A5F, #FFD166);
+        }
+
+        .card-hoverable {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-hoverable:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body class="font-sans text-secondary antialiased bg-white overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 h-24 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="group flex items-center gap-2">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                    <i class="text-white text-xl fas fa-bolt"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-secondary">UpFlex<span class="text-primary">Digital</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#features" class="font-medium text-gray-600 hover:text-primary transition-colors duration-300">Features</a>
+                <a href="#benefits" class="font-medium text-gray-600 hover:text-primary transition-colors duration-300">Benefits</a>
+                <a href="#testimonials" class="font-medium text-gray-600 hover:text-primary transition-colors duration-300">Reviews</a>
+                <a href="#faq" class="font-medium text-gray-600 hover:text-primary transition-colors duration-300">FAQ</a>
+                <a href="#about" class="font-medium text-gray-600 hover:text-primary transition-colors duration-300">About</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-button md:hidden p-2 text-secondary hover:text-primary focus:outline-none transition-colors duration-300">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="flex flex-col px-6 py-8 space-y-6">
+                <a href="#features" class="text-lg font-medium text-gray-800 hover:text-primary pl-2 border-l-4 border-transparent hover:border-primary transition-all">Features</a>
+                <a href="#benefits" class="text-lg font-medium text-gray-800 hover:text-primary pl-2 border-l-4 border-transparent hover:border-primary transition-all">Benefits</a>
+                <a href="#testimonials" class="text-lg font-medium text-gray-800 hover:text-primary pl-2 border-l-4 border-transparent hover:border-primary transition-all">Reviews</a>
+                <a href="#faq" class="text-lg font-medium text-gray-800 hover:text-primary pl-2 border-l-4 border-transparent hover:border-primary transition-all">FAQ</a>
+                <a href="#about" class="text-lg font-medium text-gray-800 hover:text-primary pl-2 border-l-4 border-transparent hover:border-primary transition-all">About</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-secondary">
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#2a2a2a] to-transparent opacity-50"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary rounded-full filter blur-[128px] opacity-20 animate-pulse"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8 animate-[fadeInDown_1s_ease-out]">
+                <span class="w-2 h-2 rounded-full bg-accent animate-ping"></span>
+                <span class="text-sm font-semibold text-white tracking-wide uppercase">AI-Powered Growth Engine</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-8">
+                Stop Chasing Leads. <br class="hidden md:block" />
+                Start Thriving on <span class="text-gradient">Autopilot.</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+                The all-in-one AI sales and marketing platform that doesn't just generate leads—it qualifies, responds, and books them while you sleep.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="https://upflexdigital.com" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-gradient-custom rounded-lg shadow-glow hover:scale-105 hover:shadow-2xl overflow-hidden">
+                    <span class="relative z-10">Get Started Now</span>
+                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5 relative z-10 transition-transform group-hover:translate-x-1"></i>
+                    <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </a>
+                
+                <a href="#features" class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 border border-gray-600 rounded-lg hover:bg-white/5 hover:border-white hover:text-accent">
+                    Explore Features
+                </a>
+            </div>
+            
+            <!-- Hero Dashboard Placeholder / Visual -->
+            <div class="mt-20 relative mx-auto max-w-5xl rounded-xl bg-gray-800 p-2 shadow-2xl border border-gray-700">
+                <div class="absolute -inset-1 bg-gradient-custom rounded-xl opacity-20 blur-lg"></div>
+                <div class="relative rounded-lg overflow-hidden aspect-[16/9] bg-gray-900 flex items-center justify-center group">
+                    <div class="text-center p-8">
+                        <i data-lucide="bar-chart-2" class="w-20 h-20 text-gray-700 mx-auto mb-4 group-hover:text-primary transition-colors duration-500"></i>
+                        <p class="text-gray-500 font-mono text-sm">AI Dashboard Interface Visualization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 md:py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-primary font-bold text-lg tracking-widest uppercase mb-3">Core Capabilities</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-secondary mb-6 tracking-tight">Everything You Need to Scale</h3>
+                <p class="text-lg text-gray-600">Our AI handles the heavy lifting of the sales process so you can focus on closing deals and growing your business.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+                <!-- Feature 1 -->
+                <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-xl card-hoverable group">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300">
+                        <i data-lucide="magnet" class="w-8 h-8 text-primary group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-secondary mb-4">Smart Lead Generation</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Stop hunting for prospects. Our AI identifies your ideal customer profile and automatically initiates conversations across multiple channels, filling your pipeline with high-intent leads 24/7.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-xl card-hoverable group">
+                    <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-300">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-yellow-600 group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-secondary mb-4">Intelligent Qualification</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Don't waste time on tire-kickers. Our system engages in natural conversations to pre-qualify leads based on your specific criteria, ensuring you only speak to prospects ready to buy.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-10 rounded-2xl border border-gray-100 shadow-xl card-hoverable group">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary transition-colors duration-300">
+                        <i data-lucide="calendar-check" class="w-8 h-8 text-secondary group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-secondary mb-4">Automated Booking</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        Eliminate the back-and-forth emails. Once a lead is qualified, our AI automatically finds a suitable time slot and books the meeting directly onto your calendar, sending reminders to reduce no-shows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-accent opacity-10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary opacity-5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-primary font-bold text-lg tracking-widest uppercase mb-3">Why UpFlex Digital?</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-secondary mb-8 tracking-tight">Save Time, Boost Revenue, Scale Effortlessly</h3>
+                    
+                    <div class="space-y-10">
+                        <div class="flex items-start gap-6 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-custom flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="clock" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-secondary mb-2">Reclaim 20+ Hours Weekly</h4>
+                                <p class="text-gray-600">Automate the tedious parts of outreach and follow-up. Your team can focus on high-value strategy and closing deals instead of manual data entry.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-custom flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-secondary mb-2">Maximize Conversion Rates</h4>
+                                <p class="text-gray-600">With instant response times and persistent, personalized follow-ups, you'll engage leads while they are hot, significantly increasing your conversion metrics.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-6 group">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-custom flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="layers" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-secondary mb-2">Scale Without Overheads</h4>
+                                <p class="text-gray-600">Grow your sales output without hiring more SDRs. Our platform scales infinitely with your demand, maintaining consistency and quality at every volume.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-custom rounded-2xl transform rotate-3 scale-105 opacity-20"></div>
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 relative border border-gray-100">
+                        <div class="flex items-center justify-between mb-8 pb-8 border-b border-gray-100">
+                            <div>
+                                <p class="text-gray-500 text-sm font-semibold uppercase">Monthly Growth</p>
+                                <p class="text-4xl font-bold text-secondary mt-1">+142%</p>
+                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700">Leads Generated</span>
+                                    <span class="font-bold text-primary">2,450</span>
+                                </div>
+                                <div class="w-full bg-gray-100 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700">Meetings Booked</span>
+                                    <span class="font-bold text-accent text-yellow-600">385</span>
+                                </div>
+                                <div class="w-full bg-gray-100 rounded-full h-2">
+                                    <div class="bg-accent h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-700">Revenue Impact</span>
+                                    <span class="font-bold text-secondary">$125k</span>
+                                </div>
+                                <div class="w-full bg-gray-100 rounded-full h-2">
+                                    <div class="bg-secondary h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 md:py-32 bg-secondary text-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div class="text-center mb-20">
+                <h2 class="text-accent font-bold text-lg tracking-widest uppercase mb-3">Client Success</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Trusted by Growth Leaders</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 hover:shadow-glow hover:-translate-y-2">
+                    <div class="flex text-accent mb-4">
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"UpFlex Digital completely transformed our sales funnel. We went from manually chasing leads to having a calendar full of qualified appointments. The ROI was immediate."</p>
+                    <div>
+                        <h4 class="font-bold text-white">Sarah Jenkins</h4>
+                        <p class="text-sm text-primary">VP of Sales, TechFlow</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 hover:shadow-glow hover:-translate-y-2">
+                    <div class="flex text-accent mb-4">
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"The automated qualification is a game-changer. My team only speaks to people ready to buy. We've cut our sales cycle in half and doubled our close rate."</p>
+                    <div>
+                        <h4 class="font-bold text-white">Marcus Thorne</h4>
+                        <p class="text-sm text-primary">Founder, Apex Marketing</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 hover:shadow-glow hover:-translate-y-2">
+                    <div class="flex text-accent mb-4">
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"Setup was incredibly easy. Within 48 hours, the AI was engaging prospects with a level of personalization that matched our top human SDRs. Incredible technology."</p>
+                    <div>
+                        <h4 class="font-bold text-white">Elena Rodriguez</h4>
+                        <p class="text-sm text-primary">Director of Operations, SwiftLogistics</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-white/5 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300 hover:shadow-glow hover:-translate-y-2">
+                    <div class="flex text-accent mb-4">
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                        <i data-lucide="star" class="fill-current w-4 h-4"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6 italic">"We needed to scale our outreach without hiring a massive team. UpFlex provided exactly that. It's like having 10 sales reps working 24/7 without the overhead."</p>
+                    <div>
+                        <h4 class="font-bold text-white">David Chen</h4>
+                        <p class="text-sm text-primary">CEO, InnovateSaaS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 md:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="w-full lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-primary rounded-2xl transform -rotate-3"></div>
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team collaborating" class="relative rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+                        <div class="absolute -bottom-8 -right-8 w-40 h-40 bg-accent rounded-full flex items-center justify-center shadow-xl hidden md:flex">
+                            <span class="text-secondary font-bold text-xl text-center leading-tight">Founded<br>2020</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-primary font-bold text-lg tracking-widest uppercase mb-3">About UpFlex Digital</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-secondary mb-8">Pioneering the Future of Automated Sales</h3>
+                    
+                    <div class="space-y-6 text-lg text-gray-600">
+                        <p>
+                            UpFlex Digital was born from a simple frustration: sales teams were spending 70% of their time on administrative tasks and only 30% on actually selling. Founded in 2020 by a team of veteran sales leaders and AI engineers, we set out to reverse this ratio. We began by developing a proprietary AI engine capable of understanding nuance in sales conversations, transforming the way businesses approach lead generation from a numbers game to a strategy of precision and relevance.
+                        </p>
+                        <p>
+                            Today, our mission is to empower businesses of all sizes to scale effortlessly by democratizing access to enterprise-grade sales automation. We believe that technology should serve humanity, not replace it. By automating the repetitive initial stages of the sales process, we liberate human professionals to do what they do best: build relationships, solve complex problems, and close high-value deals. We are committed to innovation, transparency, and driving tangible growth for our partners.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <a href="#features" class="text-primary font-bold inline-flex items-center hover:text-secondary transition-colors duration-300">
+                            Learn more about our technology <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 md:py-32 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
+            <div class="text-center mb-16">
+                <h2 class="text-primary font-bold text-lg tracking-widest uppercase mb-3">Common Questions</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-secondary">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none">
+                        <span class="text-xl font-bold text-secondary">How does the AI qualify leads?</span>
+                        <i class="faq-icon fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-8 pb-6 bg-white">
+                        <p class="text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                            Our AI uses natural language processing to engage leads in two-way conversations. It asks specific qualifying questions based on criteria you set (such as budget, timeline, and authority). It analyzes the responses to determine if the lead fits your Ideal Customer Profile before booking a meeting.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none">
+                        <span class="text-xl font-bold text-secondary">Does the outreach sound robotic?</span>
+                        <i class="faq-icon fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-8 pb-6 bg-white">
+                        <p class="text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                            Not at all. We utilize advanced Large Language Models (LLMs) that are trained on successful sales conversations. The system personalizes every message based on the prospect's data and context, ensuring the tone is professional, human-like, and engaging.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none">
+                        <span class="text-xl font-bold text-secondary">Can I integrate this with my CRM?</span>
+                        <i class="faq-icon fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-8 pb-6 bg-white">
+                        <p class="text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                            Yes, UpFlex Digital integrates seamlessly with major CRMs including Salesforce, HubSpot, Pipedrive, and Zoho. We sync all conversation history, lead status updates, and booking details in real-time so your records are always up to date.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none">
+                        <span class="text-xl font-bold text-secondary">How long does it take to get set up?</span>
+                        <i class="faq-icon fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-8 pb-6 bg-white">
+                        <p class="text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                            Most clients are up and running within 24 to 48 hours. Our onboarding process helps you define your audience, set your qualification criteria, and connect your calendar. Once configured, the AI starts working immediately.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between focus:outline-none">
+                        <span class="text-xl font-bold text-secondary">Is my data secure?</span>
+                        <i class="faq-icon fas fa-chevron-down text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer hidden px-8 pb-6 bg-white">
+                        <p class="text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                            Security is our top priority. We use enterprise-grade encryption for all data in transit and at rest. We are GDPR compliant and conduct regular security audits to ensure your proprietary customer data and sales strategies remain strictly confidential.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 md:py-32 relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/80"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight">Ready to Automate Your Growth?</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+                Join thousands of forward-thinking businesses using UpFlex to scale their sales operations effortlessly.
+            </p>
+            
+            <a href="https://upflexdigital.com" class="inline-flex items-center justify-center px-10 py-5 text-xl font-bold text-white transition-all duration-300 bg-gradient-custom rounded-lg shadow-glow hover:scale-105 hover:shadow-2xl">
+                Start Your Free Trial
+                <i data-lucide="rocket" class="ml-3 w-6 h-6"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary pt-20 pb-10 text-white border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-primary rounded flex items-center justify-center">
+                            <i class="text-white text-sm fas fa-bolt"></i>
+                        </div>
+                        <span class="text-2xl font-bold">UpFlex<span class="text-primary">Digital</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        Revolutionizing sales and marketing with intelligent automation. Stop chasing, start thriving.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Product</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#features" class="text-gray-400 hover:text-primary transition-colors duration-300">Features</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-primary transition-colors duration-300">Benefits</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-primary transition-colors duration-300">Success Stories</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-primary transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Company</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i data-lucide="mail" class="w-5 h-5 text-primary mt-1"></i>
+                            <span>info@upflexdigital.com</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary mt-1"></i>
+                            <span>123 Innovation Dr,<br>Tech City, TC 90210</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2025 UpFlex Digital. All rights reserved.
+                </p>
+                <!-- Simple Footer - No Links to Privacy/Terms as requested -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Required JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+
+                const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        const icon = mobileMenuButton.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // FAQ Accordion Toggle
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', () => {
+                        const answer = item.querySelector('.faq-answer');
+                        const icon = item.querySelector('.faq-icon');
+                        const isOpen = !answer.classList.contains('hidden');
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+                                otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        answer?.classList.toggle('hidden');
+                        icon?.classList.toggle('rotate-180');
+                    });
+                }
+            });
+
+            // Smooth Scroll for Anchor Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
